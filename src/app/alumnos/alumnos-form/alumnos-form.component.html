@@ -1,0 +1,61 @@
+<div class="col12">
+  <div class="card">
+    <div class="grid">
+      <div class="col-12 md:col-12">
+        <div class="card p-fluid">
+          <div class="contenedor">
+            <div class="contenedor-flex">
+              <h1>Datos del Alumno</h1>
+              <p-buttonGroup>
+                <p-button
+                  label="Registrar"
+                  icon="pi pi-user-plus"
+                  severity="warning"
+                  (click)="registrarAlumno()"
+                  />
+                <p-button
+                  label="Actualizar"
+                  icon="pi pi-pencil"
+                  severity="help"
+                  (click)="actualizarAlumno()"
+                  />
+              </p-buttonGroup>
+            </div>
+            <div class="contenedor-flex">
+              <div class="field">
+                <label htmlFor="id">Id</label>
+                <input pInputText type="text" [(ngModel)]="alumno.idAlumno">
+              </div>
+              <div class="field">
+                <label htmlFor="nombre">Nombre</label>
+                <input pInputText type="text" [(ngModel)]="alumno.nombreAlumno"/>
+              </div>
+              <div class="field">
+                <label htmlFor="paterno">Paterno</label>
+                <input pInputText type="text" [(ngModel)]="alumno.paternoAlumno">
+              </div>
+              <div class="field">
+                <label htmlFor="materno">Materno</label>
+                <input pInputText type="text" [(ngModel)]="alumno.maternoAlumno">
+              </div>
+            </div>
+            <div class="field">
+              <label htmlFor="correo">Correo</label>
+              <input pInputText type="text" [(ngModel)]="alumno.correoAlumno">
+            </div>
+            <!--
+            <div class="field">
+              <label htmlFor="id2">Ejemplo</label>
+              <p-inputNumber
+                [(ngModel)]="alumno.idAlumno"
+                mode="decimal"
+                [minFractionDigits]="0"
+                [maxFractionDigits]="2"/>
+            </div>
+            -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

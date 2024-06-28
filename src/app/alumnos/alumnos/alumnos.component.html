@@ -1,0 +1,52 @@
+<div class="grid">
+  <div class="col-12">
+    <div class="card">
+      <div class="contenedor">
+        <div class="contenedor-flex">
+          <h1>{{ titulo }}</h1>
+          <p-button label="Agregar" icon="pi pi-plus-circle" severity="success" [routerLink]="['/alumnosForm']"/>
+        </div>
+        @if (listadoDeAlumnos.length > 0) {
+        <p-table
+          [value]="listadoDeAlumnos"
+          [paginator]="true"
+          [rows]="5"
+          [rowsPerPageOptions]="[5,10,20]"
+        >
+          <ng-template pTemplate="header">
+            <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Paterno</th>
+              <th>Materno</th>
+              <th>Correo</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-alumno>
+            <tr>
+              <td>{{ alumno.idAlumno }}</td>
+              <td>{{ alumno.nombreAlumno }}</td>
+              <td>{{ alumno.paternoAlumno }}</td>
+              <td>{{ alumno.maternoAlumno }}</td>
+              <td>{{ alumno.correoAlumno }}</td>
+              <td>
+                <div class="card flex justify-content-center">
+                <p-buttonGroup>
+                  <p-button label="Actualizar" icon="pi pi-pencil" size="small" [routerLink]="['/alumnosForm', alumno.idAlumno]"/>
+                  <p-button label="Eliminar" icon="pi pi-trash" size="small" severity="danger" (click)="delete(alumno)"/>
+                </p-buttonGroup>
+                </div>
+              </td>
+            </tr>
+          </ng-template>
+        </p-table>
+
+      } @else {
+        <div class="card">No hay nada que mostrar</div>
+      }
+      </div>
+    </div>
+  </div>
+</div>
