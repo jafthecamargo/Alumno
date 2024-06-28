@@ -8,7 +8,7 @@ import {map, Observable, pipe} from "rxjs";
 })
 export class AlumnoService {
 
-  private endPoint: string = 'http://localhost:8080/api/alumnos';
+  private endPoint: string = 'https://apialumnos.onrender.com/api/alumnos';
   private httpHeaders = new HttpHeaders(
     {'Content-Type': 'application/json'}
   )
